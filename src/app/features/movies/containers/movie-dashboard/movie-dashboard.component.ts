@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../interfaces/movie.interface';
 import { MovieFiltersComponent } from "../../components/movie-filters/movie-filters.component";
@@ -8,10 +8,10 @@ import { MovieListComponent } from "../../components/movie-list/movie-list.compo
   selector: 'app-movie-dashboard',
   imports: [MovieFiltersComponent, MovieListComponent, ],
   template: `
-<div class="container mx-auto p-4">
+    <div class="container mx-auto p-4">
         <app-movie-filters
-                (searchChange)="onSearchChange($event)"
-              />
+            (searchChange)="onSearchChange($event)"
+          />
           <app-movie-list
             [movies]="movies()"
             [loading]="loading()"
@@ -25,7 +25,7 @@ import { MovieListComponent } from "../../components/movie-list/movie-list.compo
   styleUrl: './movie-dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieDashboardComponent {
+export class MovieDashboardComponent implements OnInit {
 
   private readonly movieService = inject(MovieService);
 

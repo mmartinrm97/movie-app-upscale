@@ -26,6 +26,7 @@ import { MovieImageSize } from '../../interfaces/movie-image-size..type';
         <div class="relative">
           <img
             [src]="getImageUrl(movie.backdrop_path, 'original')"
+            [alt]="movie.title"
             priority
             class="w-full h-[60vh] object-cover rounded-xl"
           >
@@ -36,6 +37,7 @@ import { MovieImageSize } from '../../interfaces/movie-image-size..type';
           <div class="md:col-span-1">
             <img
               [src]="getImageUrl(movie.poster_path)"
+              [alt]="movie.title"
               class="w-full h-auto rounded-xl shadow-lg dark:shadow-gray-800"
               [style]="{'view-transition-name': 'movie-' + movie.id}"
             >

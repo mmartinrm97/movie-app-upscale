@@ -2,8 +2,9 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { Movie } from '../../interfaces/movie.interface';
 
 import { CommonModule } from '@angular/common';
-import { MovieCardComponent } from '../../movie-card/movie-card.component';
+
 import { PaginationComponent } from "../../../../shared/components/pagination/pagination.component";
+import { MovieCardComponent } from '../movie-card/movie-card.component';
 
 @Component({
   selector: 'app-movie-list',

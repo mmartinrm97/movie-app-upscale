@@ -11,7 +11,7 @@ import { MovieImageSize } from '../interfaces/movie-image-size..type';
 export class MovieService {
   private readonly http = inject(HttpClient);
 
-  getNowPlaying(page: number = 1, language: string = 'en-US', region?: string): Observable<APIResponse> {
+  getNowPlaying(page = 1, language = 'en-US', region?: string): Observable<APIResponse> {
     const params = {
       language,
       page,
@@ -20,7 +20,7 @@ export class MovieService {
 
     return this.http.get<APIResponse>('/movie/now_playing', { params });
   }
-  getMoviesByGenre(genreId: number, page: number = 1): Observable<APIResponse> {
+  getMoviesByGenre(genreId: number, page = 1): Observable<APIResponse> {
     return this.http.get<APIResponse>('/discover/movie', {
       params: {
         with_genres: genreId.toString(),
@@ -29,7 +29,7 @@ export class MovieService {
     });
   }
 
-  searchMovies(query: string, page: number = 1): Observable<APIResponse> {
+  searchMovies(query: string, page = 1): Observable<APIResponse> {
     return this.http.get<APIResponse>('/search/movie', {
       params: {
         query,

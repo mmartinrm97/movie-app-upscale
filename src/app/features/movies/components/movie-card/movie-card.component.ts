@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { Movie } from '../interfaces/movie.interface';
+import { Movie } from '../../interfaces/movie.interface';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { MovieService } from '../services/movie.service';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-card',
